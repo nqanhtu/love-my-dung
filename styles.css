@@ -9,7 +9,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -24,7 +24,18 @@ body {
 .name {
   font-size: 5rem;
   text-align: center;
-  color: #ef7c8e;
+  color: #fb7185;
+  font-family: 'Pacifico';
+}
+
+.our-name {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+  will-change: transform;
+  font-size: 5rem;
   font-family: 'Pacifico';
 }
 
@@ -68,11 +79,20 @@ body {
   opacity: 1;
   transform: rotateZ(-2deg);
 }
+
 .name.hidden {
   transform: translateX(-100%);
 }
 
 .name.show {
+  transform: translateX(0);
+}
+
+.our-name.hidden {
+  transform: translateX(-100%);
+}
+
+.our-name.show {
   transform: translateX(0);
 }
 
