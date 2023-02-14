@@ -29,19 +29,10 @@ body {
 }
 
 .quote {
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 46%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-size: 30px;
-  background-image: linear-gradient(to left, #ff6699, #ff6699);
-  /* font-style: italic; */
+  font-size: 2rem;
+  color: rgb(51 65 85);
   font-family: 'Pacifico';
+  padding: 80px;
 }
 
 .date {
@@ -58,13 +49,35 @@ body {
 
   font-style: italic;
 }
+.inline-photo {
+  border: 1em solid #fff;
+  border-bottom: 4em solid #fff;
+  border-radius: 0.25em;
+  box-shadow: 1em 1em 2em 0.25em rgba(0, 0, 0, 0.2);
+  margin: 2em auto;
+  opacity: 0;
+  transform: translateY(4em) rotateZ(-5deg);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.3s 0.25s ease-out;
+  max-width: 600px;
+  width: 90%;
+  will-change: transform, opacity;
+}
+
+.inline-photo.show {
+  opacity: 1;
+  transform: rotateZ(-2deg);
+}
+.name.hidden {
+  transform: translateX(-100%);
+}
+
+.name.show {
+  transform: translateX(0);
+}
 
 .box {
   width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
 }
@@ -78,11 +91,13 @@ section {
 
 .hidden {
   opacity: 0;
-  transition: all 5s;
+  transition: all 3s;
+  filter: blur(5px);
 }
 
 .show {
   opacity: 1;
+  filter: blur(0);
 }
 
 canvas {
